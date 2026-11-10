@@ -1,0 +1,19 @@
+{
+  "version": "0.4.0",
+  "method": "isolated Playwright and local simulated AI; not daily Chrome or live provider",
+  "checks": [
+    "real selection translation automatically records expression and local context",
+    "actual page translation asynchronously recommends without automatic enrollment",
+    "explicit recommendation selection adds to learning queue",
+    "selected expression explained with nearby context",
+    "comprehension and vocabulary questions grade only after answering",
+    "encounter reveal and remember persist schedule",
+    "invalid model evidence gives visible failure without creating records",
+    "synthetic webpage clicks cannot trigger paid AI requests",
+    "actual export download and import preserve existing entries",
+    "disabling learning removes the page interface",
+    "hidden and editable fields excluded; no page errors"
+  ],
+  "errors": [],
+  "requests": 6
+}

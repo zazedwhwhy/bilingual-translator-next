@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "browser extension action invoked on the actual tab target",
+    "real tabCapture → independently encoded audio → ASR → bilingual subtitles",
+    "stop ends every captured audio track and closes the monitoring AudioContext",
+    "multiple captured chunks decode independently and use measured video offsets",
+    "translated live cues are applied to the original video without another translation request",
+    "seeking discards only the tail, preserves completed audio and drains pending recognition",
+    "ASR failure stops recording, never auto-retries, and explicit retry reuses the saved failed chunk",
+    "clearing speech credentials also cancels capture initialization",
+    "closing the recording workbench stops capture and releases audio resources"
+  ],
+  "errors": [],
+  "browser": "151.0.7922.34"
+}

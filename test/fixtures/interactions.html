@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><title>Quick translation — controlled fixture</title>
+  <style>
+    body {
+      font: 18px/1.65 system-ui;
+      margin: 32px auto;
+      max-width: 760px;
+      padding: 0 20px;
+      color: #20372f;
+      background: #f4f7f5;
+    }
+    p {
+      margin: 24px 0;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+    }
+    input,
+    textarea,
+    [contenteditable] {
+      font: inherit;
+      padding: 12px;
+      background: white;
+      border: 1px solid #879e90;
+      border-radius: 6px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    textarea {
+      min-height: 100px;
+    }
+    button {
+      padding: 10px;
+    }
+  </style>
+  <h1>Controlled translation fixture</h1>
+  <p>Local simulated API. These are test sentences, not real model output.</p>
+  <p id="selection-text">A useful phrase for independent reading.</p>
+  <p id="hover-one">The first paragraph explains a clear idea.</p>
+  <p id="hover-two">The second paragraph belongs to another request.</p>
+  <form id="form">
+    <label for="message">Message</label
+    ><textarea id="message">你好，欢迎阅读。</textarea
+    ><label for="short">Short field</label
+    ><input id="short" value="Hello world!" /><label for="rich"
+      >Simple rich text</label
+    >
+    <div id="rich" contenteditable="true">Hello <b>world</b></div>
+    <label for="private">Password</label
+    ><input id="private" type="password" value="private-do-not-send" /><label
+      for="payment"
+      >Payment</label
+    ><input id="payment" autocomplete="cc-number" value="private-card" /><button
+      type="submit"
+    >
+      Submit fixture
+    </button>
+  </form>
+  <script>
+    globalThis.submits = 0;
+    globalThis.controlled = "你好，欢迎阅读。";
+    document.getElementById("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      submits++;
+    });
+    document
+      .getElementById("message")
+      .addEventListener("input", (e) => (controlled = e.target.value));
+  </script>
+</html>

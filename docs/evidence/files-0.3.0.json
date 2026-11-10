@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "broken EPUB spine fails without translating package metadata",
+    "sample.txt import → mock translate → native export",
+    "sample.md import → mock translate → native export",
+    "sample.html import → mock translate → native export",
+    "sample.epub import → mock translate → native export",
+    "sample.docx import → mock translate → native export",
+    "sample.pptx import → mock translate → native export",
+    "sample.xlsx import → mock translate → native export",
+    "inline.xlsx import → mock translate → native export",
+    "sample.pdf import → mock translate → native export",
+    "scanned.pdf import → mock translate → native export"
+  ],
+  "errors": [],
+  "browser": "151.0.7922.34",
+  "requests": 20
+}

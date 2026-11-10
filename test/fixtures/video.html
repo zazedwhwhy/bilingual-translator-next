@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" /><title>Subtitle test video</title
+  ><style>
+    body {
+      font: 18px system-ui;
+      margin: 30px;
+      background: #eef2f0;
+    }
+    video {
+      width: 800px;
+      max-width: 95vw;
+    }
+    video::cue {
+      font: 22px system-ui;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    button {
+      padding: 12px;
+    }
+  </style>
+  <h1>Public fixture video</h1>
+  <video id="video" controls preload="auto" src="/fixture.webm">
+    <track
+      default
+      kind="subtitles"
+      label="English fixture"
+      srclang="en"
+      src="/fixture.vtt"
+    />
+  </video>
+  <p><button id="fullscreen">Fullscreen</button></p>
+  <script>
+    document.getElementById("fullscreen").onclick = () =>
+      document.getElementById("video").requestFullscreen();
+  </script>
+</html>

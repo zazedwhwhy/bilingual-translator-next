@@ -1,0 +1,15 @@
+.bt-next-result {
+  display: block !important;
+  margin: 0.5em 0 !important;
+  padding: 0.15em 0.75em !important;
+  border-left: 3px solid #56877b !important;
+  color: inherit !important;
+  font-size: 0.96em !important;
+  line-height: 1.65 !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+}
+.bt-next-error {
+  border-color: #b77938 !important;
+  font-size: 0.86em !important;
+}

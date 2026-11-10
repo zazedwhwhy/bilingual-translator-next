@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "only selected input text is replaced and undo restores original",
+    "late translation cannot overwrite new input",
+    "cancelled beforeinput is respected",
+    "password/payment/OTP/readonly/code/ARIA-readonly/translate-no targets are excluded",
+    "simple contenteditable supports replacement and exact original markup restoration",
+    "undo cannot overwrite edits made after translation",
+    "English payment/verification metadata is excluded; host rejection cannot be reported as a successful replacement"
+  ],
+  "browser": "151.0.7922.34"
+}

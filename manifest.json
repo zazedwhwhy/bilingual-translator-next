@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "双语阅读 Next",
+  "version": "0.4.0",
+  "minimum_chrome_version": "120",
+  "description": "使用自己的翻译与语音API，阅读双语网页、PDF和Office文档，生成视频双语字幕。",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "offscreen",
+    "tabCapture"
+  ],
+  "optional_host_permissions": [
+    "https://translation.googleapis.com/*",
+    "https://api.openai.com/*",
+    "https://api.deepseek.com/*",
+    "https://api.anthropic.com/*",
+    "https://*/*",
+    "http://*/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "双语阅读 Next",
+    "default_popup": "src/ui/popup.html"
+  },
+  "options_ui": {
+    "page": "src/ui/options.html",
+    "open_in_tab": true
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/content/*.js",
+        "src/shared/core.js",
+        "src/subtitles/cues.js",
+        "src/subtitles/model.js",
+        "src/subtitles/player.js",
+        "src/documents/runner.js",
+        "src/subtitles/platform-identity.js"
+      ],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}

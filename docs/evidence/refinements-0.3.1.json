@@ -1,0 +1,15 @@
+{
+  "version": "0.3.1",
+  "method": "Isolated Playwright; simulated local provider",
+  "checks": [
+    "same-paragraph pointer movement preserves the initial hover deadline and sends once",
+    "a focused sensitive input also suppresses paragraph hover",
+    "switching input host offers its own entry and an empty target cannot be replaced by an old slow preview",
+    "a new Range with identical wording invalidates the prior request immediately",
+    "manual card snapshot remains readable when browser selection collapses",
+    "persistent cache failure remains visible while a real simulated-provider translation is displayed"
+  ],
+  "errors": [],
+  "requests": 5,
+  "browser": "151.0.7922.34"
+}

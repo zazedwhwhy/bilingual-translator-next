@@ -1,0 +1,34 @@
+{
+  "mode": "0.2.1 baseline",
+  "sourceVersion": "0.2.1",
+  "method": "Playwright; controlled local 120ms service; not Computer Use or real provider",
+  "errors": [],
+  "checks": [
+    "six complete paragraphs, excluded text, restore original and cache zero calls"
+  ],
+  "cold": {
+    "firstVisibleMs": 166,
+    "firstScreenMs": 864,
+    "requests": 6,
+    "serviceDelayPerRequestMs": 120,
+    "apiRoundTripsMs": [
+      127.47,
+      130.44,
+      134.29,
+      134,
+      135.22,
+      134.78
+    ],
+    "firstResponseToDOMMs": 1.65
+  },
+  "memoryCache": {
+    "firstVisibleMs": 11,
+    "firstScreenMs": 21,
+    "requests": 0,
+    "serviceDelayPerRequestMs": 120,
+    "apiRoundTripsMs": [],
+    "firstResponseToDOMMs": null
+  },
+  "browser": "151.0.7922.34",
+  "success": true
+}

@@ -1,0 +1,125 @@
+{
+  "mode": "DeepSeek real API",
+  "model": "deepseek-flash",
+  "checks": [
+    "cold webpage click → real service response → bilingual DOM",
+    "repeated webpage translation uses cached real result with zero extra requests",
+    "three subtitle items share one real request and preserve SRT timestamps",
+    "real translated subtitles remain timed and visible in fullscreen without extra requests",
+    "repeat subtitle translation uses cached real results with zero extra requests"
+  ],
+  "requests": [
+    {
+      "ordinal": 1,
+      "apiMs": 1066,
+      "status": 200,
+      "inputBytes": 791,
+      "requestModel": "deepseek-flash",
+      "responseModel": "deepseek-flash",
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 151,
+        "completion_tokens": 64,
+        "total_tokens": 215,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 151,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "usageValidated": true
+    },
+    {
+      "ordinal": 2,
+      "apiMs": 758,
+      "status": 200,
+      "inputBytes": 856,
+      "requestModel": "deepseek-flash",
+      "responseModel": "deepseek-flash",
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 172,
+        "completion_tokens": 86,
+        "total_tokens": 258,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 172,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "usageValidated": true
+    }
+  ],
+  "errors": [],
+  "priceSources": [
+    "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+    "https://api-docs.deepseek.com/quick_start/pricing/",
+    "https://api-docs.deepseek.com/api/create-chat-completion/"
+  ],
+  "webCold": {
+    "firstDisplayMs": 1134,
+    "allDisplayMs": 1134,
+    "original": "The laboratory did not confirm that the new battery was safe. At 20 °C, its mass fell by 3.5%, while the pressure remained below 101.3 kPa. Dr. Chen asked the team to record every result, including observations that contradicted their prediction.",
+    "translation": "实验室并未确认新电池是安全的。在20°C下，其质量下降了3.5%，而压力保持在101.3 kPa以下。陈博士要求团队记录每一项结果，包括与他们的预测相矛盾的观察。"
+  },
+  "webWarm": {
+    "displayMs": 68,
+    "additionalRequests": 0
+  },
+  "subtitlesCold": {
+    "firstDisplayMs": 766,
+    "allDisplayMs": 766
+  },
+  "subtitleExport": "1\n00:00:00,000 --> 00:00:00,900\nThe trial did not prove that the battery was safe.\nFurther tests are required before use.\n试验并未证明该电池是安全的。\n使用前需要进行进一步测试。\n\n2\n00:00:01,000 --> 00:00:01,900\nAt 20 °C, the sample lost 3.5% of its mass.\nKeep the pressure below 101.3 kPa.\n在20 °C下，样品质量损失了3.5%。\n将压力保持在101.3 kPa以下。\n\n3\n00:00:02,000 --> 00:00:02,900\nDr. Chen said: “Record the result, even if it contradicts our prediction.”\n陈博士说：“记录结果，即使它与我们的预测相矛盾。”\n",
+  "step": "complete",
+  "player": {
+    "time": 0,
+    "active": [
+      {
+        "start": 0,
+        "end": 0.9,
+        "text": "The trial did not prove that the battery was safe.\nFurther tests are required before use.\n试验并未证明该电池是安全的。\n使用前需要进行进一步测试。"
+      }
+    ],
+    "cueCount": 3,
+    "fullscreen": true
+  },
+  "subtitlesWarm": {
+    "displayMs": 41,
+    "additionalRequests": 0
+  },
+  "browser": "151.0.7922.34",
+  "success": true,
+  "budget": {
+    "calls": 2,
+    "maximumCalls": 2,
+    "authorizedRmb": 5,
+    "internalLimitRmb": 4.5,
+    "spentUpperRmb": 0.0038766,
+    "reservedRmb": 0,
+    "worstCasePerRequestRmb": 4.472832
+  },
+  "totalUsage": {
+    "prompt_tokens": 323,
+    "completion_tokens": 150,
+    "total_tokens": 473,
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 323
+  },
+  "estimatedRmbAtOfficialPeak": 0.001846,
+  "temporaryCredentialCleanup": "owned browser storage cleared; owned profile removed",
+  "playerReplayVerification": {
+    "source": "captions from the two recorded real API responses; local playback only",
+    "time": 1.012759,
+    "fullscreen": true,
+    "active": [
+      {
+        "start": 1,
+        "end": 1.9,
+        "text": "At 20 °C, the sample lost 3.5% of its mass.\nKeep the pressure below 101.3 kPa.\n在20 °C下，样品质量损失了3.5%。\n将压力保持在101.3 kPa以下。"
+      }
+    ],
+    "cueCount": 3,
+    "additionalApiRequests": 0
+  }
+}

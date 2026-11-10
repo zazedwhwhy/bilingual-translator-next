@@ -1,0 +1,17 @@
+{
+  "testPort": 18787,
+  "cachePort": 18788,
+  "productionFilesVerified": 274,
+  "testFilesRemapped": 13,
+  "scripts": [
+    "browser-interactions.mjs",
+    "browser-refinements.mjs",
+    "browser-cache.mjs",
+    "browser-page-speed.mjs",
+    "browser.mjs",
+    "browser-documents.mjs",
+    "browser-platform-layouts.mjs",
+    "browser-video.mjs",
+    "browser-capture.mjs"
+  ]
+}

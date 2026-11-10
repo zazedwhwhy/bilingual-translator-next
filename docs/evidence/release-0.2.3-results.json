@@ -1,0 +1,17 @@
+{
+  "version": "0.2.3",
+  "sha256": "0AC6EB4B918690030460775FE582635EAE0A9F84EF0BB99F9F3DC13645A02A28",
+  "archiveBytes": 23256333,
+  "files": 267,
+  "unpackedBytes": 38137572,
+  "browser": "151.0.7922.34",
+  "checks": [
+    "archive contains only production manifest/src",
+    "every archive file matches source bytes",
+    "no pregranted host permissions or credential",
+    "clean Chrome loads service worker/options/workbench",
+    "bundled PDF worker parses fixture without external request"
+  ],
+  "pageErrors": [],
+  "externalRequests": []
+}

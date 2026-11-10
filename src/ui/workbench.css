@@ -1,0 +1,81 @@
+main.workbench {
+  max-width: 1400px;
+  margin: 8px auto;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+header button {
+  flex-shrink: 0;
+}
+.reader {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+#pdf-preview {
+  flex: 1;
+  min-width: 0;
+  position: sticky;
+  top: 12px;
+  max-height: 88vh;
+  overflow: auto;
+  background: #ddd;
+  padding: 8px;
+}
+#pdf-canvas {
+  width: 100%;
+  height: auto;
+}
+#document-content {
+  flex: 1;
+  min-width: 0;
+}
+article.document-row {
+  background: Canvas;
+  border: 1px solid #d3ded7;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  padding: 18px;
+}
+article.document-row small {
+  color: #52665b;
+  overflow-wrap: anywhere;
+  display: block;
+  margin-bottom: 8px;
+}
+.document-source,
+.document-target {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 8px 0;
+}
+.document-target {
+  border-left: 3px solid #56877b;
+  padding-left: 16px;
+}
+.document-error {
+  color: #a74c20;
+}
+#document-file {
+  max-width: 660px;
+}
+#pdf-navigation {
+  align-items: center;
+  margin: 18px 0;
+}
+@media (max-width: 850px) {
+  .reader {
+    display: block;
+  }
+  #pdf-preview {
+    position: static;
+    max-height: 50vh;
+  }
+  header {
+    align-items: flex-start;
+  }
+}

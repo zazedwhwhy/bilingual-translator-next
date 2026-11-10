@@ -1,0 +1,20 @@
+{
+  "mode": "0.3.0 baseline",
+  "method": "Real native IndexedDB in isolated Chrome; no provider request; single local run",
+  "legacyPreserved": true,
+  "translated": [
+    "译:Source 0",
+    "译:Source 1",
+    "译:Source 2",
+    "译:Source 3",
+    "译:Source 4",
+    "译:Source 5",
+    "译:Source 6",
+    "译:Source 7"
+  ],
+  "resultWriteTransactions": 16,
+  "hot": "译:Source 0",
+  "hotImmediateWrites": 1,
+  "jobsToResultMs": 6.1,
+  "browser": "151.0.7922.34"
+}

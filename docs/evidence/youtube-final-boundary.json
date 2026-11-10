@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-09T04:33:46.338Z",
+  "url": "https://www.youtube.com/watch?v=eIho2S0ZahI",
+  "title": "朱利安·特瑞雪: 怎样说话人们才会听 - YouTube",
+  "status": "LOGIN_REQUIRED",
+  "reason": "请登录，以便我们确认你不是聊天机器人",
+  "videos": [
+    {
+      "duration": null,
+      "ready": 0,
+      "paused": true
+    }
+  ],
+  "paidRequests": 0,
+  "outcome": "Blocked; no login or bypass; live subtitle display not verified"
+}

@@ -1,0 +1,9 @@
+WEBVTT
+
+first
+00:00:00.000 --> 00:00:01.300
+Hello from the first caption.
+
+second
+00:00:01.300 --> 00:00:03.000
+Second caption after seeking.

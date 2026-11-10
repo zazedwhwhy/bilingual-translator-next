@@ -1,0 +1,49 @@
+<!doctype html><meta charset="utf-8" /><title>
+  Simulated platform player layout</title
+><style>
+  body {
+    margin: 28px;
+    font: 18px system-ui;
+  }
+  #movie_player {
+    position: relative;
+    width: 900px;
+    max-width: 95vw;
+    background: #111;
+  }
+  video {
+    width: 100%;
+    display: block;
+  }
+  #movie_player:fullscreen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #movie_player:fullscreen video {
+    height: 100%;
+    object-fit: contain;
+  }
+  button {
+    padding: 14px;
+  }
+</style>
+<h1>Simulated platform container, not an online site test</h1>
+<div id="movie_player">
+  <video id="video" controls preload="auto" src="/fixture.webm">
+    <track
+      default
+      kind="subtitles"
+      label="English fixture"
+      srclang="en"
+      src="/fixture.vtt"
+    />
+  </video>
+</div>
+<button id="fullscreen">Fullscreen</button>
+<script>
+  document.getElementById("fullscreen").onclick = () =>
+    document.getElementById("movie_player").requestFullscreen();
+</script>

@@ -1,0 +1,24 @@
+{
+  "method": "Isolated Playwright; local simulated provider; no daily Chrome or Computer Use",
+  "checks": [
+    "late initialization failure cannot clear newer preferences",
+    "Ctrl+Alt combination does not accidentally trigger hover translation",
+    "selection requires a click, translates just the selected text",
+    "ordinary hover makes zero requests; Alt dwell rechecks the final paragraph",
+    "input translates to independent target, previews, confirms, notifies controlled field and safely undoes without submitting",
+    "password and payment fields cannot dispatch",
+    "narrow viewport keeps translation panel inside the screen",
+    "selected input substring preserves surrounding text and undo restores it",
+    "simple rich text preview/replacement restores original formatting on undo",
+    "simulated IME composition blocks a real keyboard shortcut request",
+    "editing during an actually dispatched slow request cancels stale output with no automatic retry",
+    "disabling input during a request cancels the old preview and prevents new input calls",
+    "moving from a pending hover into an excluded field prevents a stale hover result",
+    "unavailable clipboard shows manual-copy guidance without a runtime exception",
+    "initialization failure is visible and an explicit reconnect restores entries without a provider request",
+    "module startup failure has a visible page notice"
+  ],
+  "errors": [],
+  "requests": 8,
+  "browser": "151.0.7922.34"
+}

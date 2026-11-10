@@ -1,0 +1,10 @@
+dist/
+node_modules/
+.tmp/
+test/fixtures/*.webm
+.env
+.env.*
+!.env.example
+*.log
+Thumbs.db
+.DS_Store

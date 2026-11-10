@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-09T15:43:59.180Z",
+  "scope": "Logged-out public players; imported control cues, not site transcription; no translation or ASR configuration",
+  "sites": [
+    {
+      "name": "youtube",
+      "url": "https://www.youtube.com/watch?v=eIho2S0ZahI",
+      "checks": [],
+      "pageErrors": [],
+      "captionResponses": [],
+      "blocked": {
+        "status": "LOGIN_REQUIRED",
+        "reason": "请登录，以便我们确认你不是聊天机器人"
+      }
+    },
+    {
+      "name": "bilibili",
+      "url": "https://www.bilibili.com/video/BV1J94y177Nt/",
+      "checks": [
+        "public page and finite playable video loaded",
+        "one-click existing-caption lookup reports the site boundary without ASR or text API",
+        "active CID read from public player manifest",
+        "specific second bilingual cue displayed after seek, inside player bounds",
+        "container fullscreen retains bilingual layer",
+        "gap between cues clears both lines",
+        "restore removes owned layer and watcher tokens",
+        "normal next control changes video/part and removes old subtitles",
+        "old selected video ID is rejected after in-page part change"
+      ],
+      "pageErrors": [],
+      "captionResponses": [],
+      "title": "TED 演讲【2023年】【英文CC字幕】_哔哩哔哩_bilibili",
+      "quickExistingCaption": {
+        "elapsedMs": 67,
+        "ok": false,
+        "error": {
+          "code": "SUBTITLE_LOGIN_REQUIRED",
+          "message": "这个视频的字幕需要先在原网站登录。可手动导入字幕；不会自动调用语音识别。",
+          "manualRetryAllowed": true
+        }
+      },
+      "video": {
+        "label": "B站 · 主视频",
+        "tracks": [],
+        "notice": "这个视频的CC字幕需要先在B站登录。也可以导入已有SRT/VTT字幕。"
+      },
+      "captionRead": {
+        "notice": "这个视频的CC字幕需要先在B站登录。也可以导入已有SRT/VTT字幕。",
+        "availableTracks": 0
+      },
+      "activeSource": "bilibili:BV1J94y177Nt:1359939486",
+      "layout": {
+        "text": "Imported control cue two导入测试字幕二",
+        "font": 24.45,
+        "width": 880.21875,
+        "height": 76.578125,
+        "within": true
+      },
+      "partLinks": [],
+      "navigation": {
+        "before": {
+          "clock": 1794239048083.4,
+          "url": "https://www.bilibili.com/video/BV1J94y177Nt/",
+          "cid": 1359939486
+        },
+        "after": {
+          "clock": 1794239048083.4,
+          "url": "https://www.bilibili.com/video/BV1J94y177Nt/",
+          "cid": 1359948500
+        },
+        "sameDocument": true
+      }
+    }
+  ],
+  "blockedPaidRequests": 0,
+  "browser": "151.0.7922.34",
+  "success": true,
+  "fullyExercised": false
+}

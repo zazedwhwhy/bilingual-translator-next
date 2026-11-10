@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width"
+  /><title>英语学习 · 双语阅读</title
+  ><link rel="stylesheet" href="styles.css" />
+  <main>
+    <h1>让读过的英语留下来</h1>
+    <p>先理解文章，再积累你用得上的表达。</p>
+    <section class="card">
+      <h2>学习设置</h2>
+      <p>
+        查询收录需要同时开启“划词翻译”或“Alt
+        悬停翻译”，可在页面底部的连接与快捷入口设置中开启。
+      </p>
+      <label class="check"
+        ><input id="enabled" type="checkbox" />开启网页英语学习</label
+      >
+      <p>
+        开启后，主动划词、Alt
+        悬停查询会在本机记录原文、译文、邻近段落和来源路径；短词与表达自动进入学习队列，整段留作阅读记录。输入框草稿不自动记录。
+      </p>
+      <p>
+        翻译网页时会额外将正文前 18000
+        字符和水平、偏好发给当前配置的文字模型，生成推荐。解释与练习由你点击后生成。可能额外计费；不会自动重试、切换服务或调用语音识别。
+      </p>
+      <label for="level">我的阅读水平</label
+      ><select id="level">
+        <option value="A1">A1 · I like this book.（理解简单短句）</option>
+        <option value="A2">
+          A2 · I bought it because it looked interesting.
+        </option>
+        <option value="B1">
+          B1 · Although it was difficult, I kept reading.
+        </option>
+        <option value="B2">
+          B2 · The evidence challenges a widely held assumption.
+        </option>
+        <option value="C1">C1 · 理解复杂论证、隐含态度与语域</option>
+        <option value="C2">C2 · 熟练处理细微含义与复杂文本</option>
+      </select>
+      <label for="preference">推荐更偏向</label
+      ><select id="preference">
+        <option value="practical">常用、实用、以后用得上</option>
+        <option value="article">理解当前文章的难点</option></select
+      ><button id="save" class="primary">保存学习设置</button>
+      <details>
+        <summary>可选：三题阅读小测</summary>
+        <p>仅作入门参考，不是标准化水平测评，不自动修改设置。</p>
+        <form id="placement"></form>
+        <p id="placement-result"></p>
+      </details>
+    </section>
+    <p id="status" role="status" aria-live="polite">正在读取学习库…</p>
+    <p id="suggestion"></p>
+    <section class="card">
+      <h2>我的学习库</h2>
+      <label for="filter">查看</label
+      ><select id="filter">
+        <option value="due">到期复习</option>
+        <option value="learning">全部学习表达</option>
+        <option value="reading">阅读记录 / 暂不复习</option>
+        <option value="all">全部记录</option></select
+      ><input
+        id="search"
+        type="search"
+        placeholder="搜索原文或译文"
+        aria-label="搜索学习记录"
+      />
+      <p id="count"></p>
+      <div id="records"></div>
+    </section>
+    <section class="card">
+      <h2>本机数据</h2>
+      <p>
+        学习库独立于译文缓存，不随缓存过期。导出文件包含查询文本、上下文和来源，请自行妥善保存。导入合并新条目，保留已有复习状态；不会启用学习模式或导入密钥。
+      </p>
+      <button id="export">导出学习库</button
+      ><label for="import">导入学习库 JSON</label
+      ><input id="import" type="file" accept=".json,application/json" /><button
+        id="clear"
+      >
+        删除全部学习记录
+      </button>
+      <p><a href="options.html">翻译连接与快捷入口设置</a></p>
+    </section>
+  </main>
+  <script type="module" src="learning.js"></script>
+</html>

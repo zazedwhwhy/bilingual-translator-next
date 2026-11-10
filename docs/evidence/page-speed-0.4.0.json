@@ -1,0 +1,49 @@
+{
+  "mode": "optimized",
+  "sourceVersion": "0.4.0",
+  "method": "Playwright; controlled local 120ms service; not Computer Use or real provider",
+  "errors": [],
+  "checks": [
+    "six complete paragraphs, excluded text, restore original and cache zero calls",
+    "enable switch → registered bootstrap → foreign navigation translates without clicking Start",
+    "manual restore keeps this route stopped despite later DOM updates",
+    "new SPA route automatically resumes with stable source and revision guards",
+    "Chinese body skips automatic translation even with incorrect English HTML language",
+    "inactive Chrome tab defers all requests until a real tabs.onActivated event",
+    "disable switch unregisters bootstrap and prevents new page requests",
+    "missing key shows a visible popup error without a provider request",
+    "explicit connection save rechecks the unstarted page without refresh or Start click",
+    "first bilingual subtitle appears before all 24 cues complete"
+  ],
+  "cold": {
+    "firstVisibleMs": 176,
+    "firstScreenMs": 176,
+    "requests": 1,
+    "serviceDelayPerRequestMs": 120,
+    "apiRoundTripsMs": [
+      129.72
+    ],
+    "firstResponseToDOMMs": 10.7
+  },
+  "memoryCache": {
+    "firstVisibleMs": 7,
+    "firstScreenMs": 7,
+    "requests": 0,
+    "serviceDelayPerRequestMs": 120,
+    "apiRoundTripsMs": [],
+    "firstResponseToDOMMs": null
+  },
+  "autoCold": {
+    "navigationToFirstMs": 211,
+    "navigationToScreenMs": 211,
+    "requests": 1
+  },
+  "subtitles": {
+    "firstVisibleMs": 132,
+    "all24Ms": 410,
+    "requests": 3,
+    "scope": "controlled imported captions; local 120ms API; simulated player"
+  },
+  "browser": "151.0.7922.34",
+  "success": true
+}

@@ -1,0 +1,24 @@
+{
+  "checks": [
+    "UI save → click start → background mock request → bilingual DOM",
+    "scroll visibility scheduling",
+    "source revision invalidates old translation",
+    "restore preserves original content",
+    "google mock end to end",
+    "deepseek mock end to end",
+    "claude mock end to end",
+    "invalid batch shows explicit error with no success nodes",
+    "mock 401: explicit error, counted dispatch, no automatic repeat",
+    "mock 429: explicit error, counted dispatch, no automatic repeat",
+    "mock 500: explicit error, counted dispatch, no automatic repeat",
+    "mock invalid: explicit error, counted dispatch, no automatic repeat",
+    "mock truncated: explicit error, counted dispatch, no automatic repeat",
+    "mock oversize: explicit error, counted dispatch, no automatic repeat",
+    "stop prevents late DOM insertion",
+    "content cannot read key, mutate config, or access extension cache",
+    "worker termination interrupts job without automatic replay"
+  ],
+  "errors": [],
+  "requestCount": 15,
+  "browser": "151.0.7922.34"
+}

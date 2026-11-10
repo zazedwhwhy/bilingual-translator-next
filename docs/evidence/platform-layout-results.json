@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "native track → batch translation → native bilingual cues",
+    "seek selects the correct bilingual cue",
+    "DIV fullscreen retains visible bilingual overlay within player bounds",
+    "bilingual SRT export preserves cue boundaries",
+    "restore returns original track mode",
+    "simulated Bilibili container retains bilingual layer in fullscreen",
+    "source replacement cancels old video session",
+    "subtitle workbench import → translation → VTT export"
+  ],
+  "errors": [],
+  "browser": "151.0.7922.34"
+}

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width"
+  /><title>文件与字幕工作台 · 双语阅读</title
+  ><link rel="stylesheet" href="styles.css" /><link
+    rel="stylesheet"
+    href="workbench.css"
+  />
+  <body>
+    <main class="workbench">
+      <header>
+        <div>
+          <h1>文件与字幕工作台</h1>
+          <p class="muted">
+            文件在本机解析，待翻译文字发给你选择的 API。原件保留，结果另存。
+          </p>
+        </div>
+        <button id="open-settings">服务设置</button>
+      </header>
+      <section class="card">
+        <label for="document-file">选择文档</label
+        ><input
+          id="document-file"
+          type="file"
+          accept=".pdf,.epub,.txt,.md,.html,.htm,.docx,.pptx,.xlsx"
+        /><label class="check"
+          ><input id="document-ocr" type="checkbox" checked />对无文字的 PDF
+          页进行本地 OCR（英文和简体中文）</label
+        >
+        <div class="actions">
+          <button id="document-translate" class="primary" disabled>
+            开始翻译</button
+          ><button id="document-stop">停止</button
+          ><button id="document-continue" disabled>继续下一轮</button
+          ><button id="document-retry" disabled>重试失败段落</button
+          ><button id="document-export" disabled>导出双语原格式</button
+          ><button id="document-html" disabled>导出双语 HTML</button>
+        </div>
+        <p
+          id="document-status"
+          role="status"
+          aria-live="polite"
+          data-phase="idle"
+        >
+          选择一个文件开始。
+        </p>
+        <p class="muted">
+          支持 PDF、EPUB、TXT、Markdown、HTML、DOCX、PPTX、XLSX。PDF
+          导出保留原页并附译文页；Office
+          追加译文可能改变分页。表格公式和数字保持不变。
+        </p>
+      </section>
+      <section id="subtitle-section" class="card">
+        <h2>字幕与音视频</h2>
+        <label for="subtitle-file">导入 SRT / WebVTT 字幕</label
+        ><input id="subtitle-file" type="file" accept=".srt,.vtt" /><label
+          for="subtitle-media-file"
+          >配对本地音视频（仅本地播放）</label
+        ><input
+          id="subtitle-media-file"
+          type="file"
+          accept="audio/*,video/*"
+        /><video
+          id="subtitle-player"
+          controls
+          style="width: 100%; max-height: 420px"
+        ></video>
+        <p
+          id="subtitle-active"
+          style="white-space: pre-wrap"
+          aria-live="polite"
+        ></p>
+        <label for="subtitle-offset">播放器时间偏移（秒，不改变导出时间）</label
+        ><input id="subtitle-offset" type="number" step="0.1" value="0" />
+        <div class="actions">
+          <button id="subtitle-translate" class="primary" disabled>
+            翻译字幕</button
+          ><button id="subtitle-stop">停止翻译</button
+          ><button id="subtitle-continue" disabled>继续下一轮</button
+          ><button id="subtitle-retry" disabled>重试</button
+          ><button id="subtitle-srt" disabled>导出双语 SRT</button
+          ><button id="subtitle-vtt" disabled>导出双语 VTT</button>
+        </div>
+        <p id="subtitle-status" role="status" data-phase="idle">
+          导入已有字幕，或生成 AI 字幕。
+        </p>
+        <details>
+          <summary>字幕预览（前200条）</summary>
+          <div id="subtitle-list" style="white-space: pre-wrap"></div>
+        </details>
+        <label for="subtitle-target">原网页视频</label
+        ><select id="subtitle-target"></select>
+        <div class="actions">
+          <button id="subtitle-target-refresh">读取原网页视频</button
+          ><button id="subtitle-apply" disabled>应用当前字幕到原网页</button>
+        </div>
+      </section>
+      <section id="asr-section" class="card">
+        <h2>AI 字幕 · 音视频识别</h2>
+        <p class="muted">
+          先在服务设置中配置语音接口。音频和文件名发送到该接口，识别文字再发送到文本翻译服务。文件与结果暂存于扩展本机，可随时清除。
+        </p>
+        <label for="asr-file">上传音频或视频（单段小于25 MiB）</label
+        ><input id="asr-file" type="file" accept="audio/*,video/*" />
+        <div class="actions">
+          <button id="asr-start" class="primary" disabled>
+            识别并翻译（可能计费）</button
+          ><button id="asr-stop" disabled>停止识别</button
+          ><button id="asr-retry" disabled>重试失败识别（可能重复计费）</button
+          ><button id="asr-clear">清除本次音频和识别结果</button>
+        </div>
+        <p id="asr-status" role="status" data-phase="idle">
+          选择音视频文件，或录制原标签页音频。
+        </p>
+      </section>
+      <section class="card">
+        <h2>AI 字幕 · 当前标签页音频</h2>
+        <p class="muted">
+          从视频页点击扩展并打开工作台，选择原网页视频，以1倍速播放后开始。录制整个标签页声音，每15秒发送一个独立音频片段到语音接口，再翻译文字；通常会延迟十几秒。暂停、跳转、变速或更换视频会停止录音，并丢弃最后一个不完整片段。单次最多30分钟；请先关闭该页其它声音。
+        </p>
+        <div class="actions">
+          <button id="capture-start" class="primary">
+            开始录音并识别（可能计费）</button
+          ><button id="capture-stop" disabled>停止录音并完成字幕</button
+          ><button id="capture-retry" disabled>
+            重试失败识别（可能重复计费）</button
+          ><button id="capture-clear">清除本次录音和结果</button>
+        </div>
+        <p id="capture-status" role="status" data-phase="idle">
+          尚未录音。只会在点击开始后捕获。
+        </p>
+      </section>
+      <section id="pdf-navigation" class="actions" hidden>
+        <button id="pdf-previous">上一页</button><span id="pdf-page"></span
+        ><button id="pdf-next">下一页</button>
+      </section>
+      <section class="reader">
+        <div id="pdf-preview" hidden><canvas id="pdf-canvas"></canvas></div>
+        <div id="document-content"></div>
+      </section>
+    </main>
+    <script type="module" src="workbench.js"></script>
+  </body>
+</html>

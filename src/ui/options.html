@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width"
+  /><title>双语阅读 · 设置</title
+  ><link rel="stylesheet" href="styles.css" />
+  <main>
+    <p><a href="learning.html" target="_blank">英语学习 · 设置与学习库</a></p>
+    <h1>连接你的翻译服务</h1>
+    <p class="muted">
+      使用你自己的 API Key。保存不发送测试请求，翻译时仅把正文发送给所选服务。
+    </p>
+    <section class="card">
+      <label class="check"
+        ><input
+          id="auto-translate"
+          type="checkbox"
+          disabled
+        />打开外语网页时自动翻译</label
+      >
+      <p id="auto-status" class="muted" role="status">正在读取自动翻译设置…</p>
+      <p class="muted">
+        首次开启需允许访问普通网页。仅在当前显示的标签页自动翻译正文，使用已配置的服务并可能计费；中文等目标语言页面会跳过。可随时在这里或弹窗关闭。
+      </p>
+    </section>
+    <section class="card">
+      <h2>随手翻译</h2>
+      <label class="check"
+        ><input
+          id="quick-selection"
+          type="checkbox"
+          disabled
+        />划词后显示翻译按钮</label
+      >
+      <label class="check"
+        ><input id="quick-hover" type="checkbox" disabled />按住 Alt
+        悬停翻译段落</label
+      >
+      <label class="check"
+        ><input id="quick-input" type="checkbox" disabled />输入框翻译（按钮或
+        Alt+T）</label
+      >
+      <label for="quick-target">输入框译成</label
+      ><select id="quick-target" disabled></select>
+      <p id="quick-status" class="muted" role="status">正在读取快捷翻译设置…</p>
+      <p class="muted">
+        划词后点击才翻译；悬停需按住 Alt
+        停留。输入框先预览，再确认替换，可撤销；不会自动提交。触发时仅发送当前文字，普通输入仍可能包含私人信息。
+      </p>
+    </section>
+    <section class="card">
+      <label for="provider">翻译服务</label
+      ><select id="provider">
+        <option value="google">Google Cloud Translation</option>
+        <option value="openai">OpenAI</option>
+        <option value="deepseek">DeepSeek</option>
+        <option value="claude">Claude</option>
+      </select>
+      <div id="model-row">
+        <label for="model">模型名称</label
+        ><input
+          id="model"
+          autocomplete="off"
+          placeholder="填写你已开通的模型名称"
+        />
+      </div>
+      <label for="key">API Key</label
+      ><input
+        id="key"
+        type="password"
+        autocomplete="off"
+        placeholder="填写新密钥；留空保留当前服务的已存密钥"
+      />
+      <p class="muted">
+        密钥保存在本机扩展存储中。聊天订阅和网页登录不能代替 API Key。
+      </p>
+      <label for="source">原文语言</label
+      ><select id="source">
+        <option value="auto">自动识别</option></select
+      ><label for="target">目标语言</label
+      ><select id="target"></select
+      ><label class="check"
+        ><input id="cache" type="checkbox" />允许在本机保存译文缓存（30
+        天）</label
+      >
+      <div class="actions">
+        <button id="save" class="primary">保存连接</button
+        ><button id="test">测试连接（可能计费）</button>
+      </div>
+    </section>
+    <p id="status" role="status" aria-live="polite"></p>
+    <div class="actions">
+      <button id="clear-key">移除密钥</button
+      ><button id="clear-cache">清空缓存</button>
+    </div>
+    <section id="asr-settings" class="card">
+      <h2>AI 字幕 · 语音识别</h2>
+      <p class="muted">
+        识别时会把所选音频发送给此接口，再用文本翻译服务生成双语字幕。模型必须返回真实分段时间戳。
+      </p>
+      <fieldset id="asr-fields" disabled style="border: 0; padding: 0">
+        <label for="asr-endpoint">语音识别完整接口地址</label
+        ><input
+          id="asr-endpoint"
+          type="url"
+          value="https://api.openai.com/v1/audio/transcriptions"
+        /><label for="asr-model">支持时间戳的模型</label
+        ><input id="asr-model" placeholder="填写服务提供的模型名称" /><label
+          for="asr-key"
+          >独立语音 API Key</label
+        ><input
+          id="asr-key"
+          type="password"
+          autocomplete="off"
+          placeholder="留空保留同一接口的已存密钥"
+        /><label for="asr-response">时间轴响应格式</label
+        ><select id="asr-response">
+          <option value="verbose_json">
+            Whisper-compatible verbose_json（segments）
+          </option>
+          <option value="diarized_json">diarized_json（segments）</option>
+          <option value="vtt">WebVTT</option>
+          <option value="srt">SRT</option></select
+        ><label for="asr-language">音频语言代码</label
+        ><input id="asr-language" value="auto" placeholder="auto / en / zh" />
+        <p class="muted">
+          OpenAI 的 whisper-1 可使用 verbose_json
+          时间戳；新模型不一定支持相同协议。请以服务当前文档为准，纯文本结果会明确报错。
+        </p>
+        <div class="actions">
+          <button id="asr-save" class="primary">保存语音连接</button
+          ><button id="asr-clear">移除语音密钥</button>
+        </div>
+      </fieldset>
+      <p id="asr-config-status" role="status"></p>
+    </section>
+    <details>
+      <summary>脱敏诊断</summary>
+      <p class="muted">只含服务、计数和错误码。无正文、完整网址或密钥。</p>
+      <button id="diagnostics">查看诊断</button
+      ><textarea
+        id="diagnostic-output"
+        readonly
+        aria-label="诊断内容"
+      ></textarea>
+    </details>
+  </main>
+  <script type="module" src="options.js"></script>
+</html>

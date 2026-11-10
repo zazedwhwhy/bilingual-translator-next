@@ -1,0 +1,18 @@
+1
+00:00:00,000 --> 00:00:00,900
+The trial did not prove that the battery was safe.
+Further tests are required before use.
+试验并未证明该电池是安全的。
+使用前需要进行进一步测试。
+
+2
+00:00:01,000 --> 00:00:01,900
+At 20 °C, the sample lost 3.5% of its mass.
+Keep the pressure below 101.3 kPa.
+在20 °C下，样品质量损失了3.5%。
+将压力保持在101.3 kPa以下。
+
+3
+00:00:02,000 --> 00:00:02,900
+Dr. Chen said: “Record the result, even if it contradicts our prediction.”
+陈博士说：“记录结果，即使它与我们的预测相矛盾。”
